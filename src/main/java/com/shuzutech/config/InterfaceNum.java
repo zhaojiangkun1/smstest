@@ -1,0 +1,5 @@
+package com.shuzutech.config;
+
+public enum InterfaceNum {
+    PROSEND,TESTSEND,GETRESULTTEST,GETRESULTPRO,NEWTESTSEND,NEWPROSEND,OLDADDRNEWPARAM
+}

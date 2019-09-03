@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="短信发送接口">
+<select id="getAppInfo" parameterType="Integer" resultType="com.shuzutech.bean.AppInfo">
+    select * from appinfo where id = #{id};
+    </select>
+    <update id="updateAppInfo" parameterType="com.shuzutech.bean.AppInfo">
+        update appInfo set AccessToken = #{accessToken},updateTime = #{updateTime} where id = #{id};
+    </update>
+    <select id="getSendAllSmsParams" parameterType="Integer" resultType="com.shuzutech.bean.SendAllSmsParams">
+        select * from sendallsms where id = #{id};
+    </select>
+    <select id="getSendSmsParams" parameterType="Integer" resultType="com.shuzutech.bean.SendSmsParams">
+        select * from  sendsms where id = #{id};
+    </select>
+    <insert id="saveResult" parameterType="com.shuzutech.bean.ResultList">
+        insert into sendresult(id,taskId) values (#{id},#{taskId});
+    </insert>
+    <select id="sendResult" parameterType="Integer" resultType="com.shuzutech.bean.ResultList">
+        select * from sendresult order by id desc limit 1;
+    </select>
+    <select id="pageModel" parameterType="Integer" resultType="com.shuzutech.bean.PageModel">
+        select * from pagemodel where id = #{id};
+    </select>
+
+
+</mapper>
