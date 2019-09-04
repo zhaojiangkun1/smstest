@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="短信接口测试">
+    <test name="发送短信接口测试">
+        <groups>
+            <run>
+                <include name="移动号码测试"/>
+                <include name="电信号码测试"/>
+                <include name="联通号码测试"/>
+            </run>
+        </groups>
+       <classes>
+           <class name="com.shuzutech.cases.SendSmsCase"/>
+       </classes>
+    </test>
+    <test name="批量发送接口测试">
+        <groups>
+            <run>
+                <include name="移动号码测试"/>
+                <include name="联通号码测试"/>
+                <include name="电信号码测试"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.shuzutech.cases.SendALlSmsCase"/>
+        </classes>
+    </test>
+    <test name="发送结果测试">
+        <groups>
+            <run>
+                <include name="发送结果测试"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.shuzutech.cases.ResultListCase"/>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="com.shuzutech.config.ExtentTestNGIReporterListener"/>
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+    </listeners>
+</suite>

@@ -17,10 +17,10 @@ public class SendSmsCase {
      * @throws NoSuchAlgorithmException
      * @throws IOException
      */
-    @Test
+    @Test(groups = {"移动号码测试"})
     public void sendSmsCase() throws ParseException, NoSuchAlgorithmException, IOException {
         String result = SmsInterface.smsInterface(InterfaceNum.PROSEND,4);
-        SaveSendSmsResultList.saveSendSmsResultList(result);
+        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.PROSEND,4);
     }
 
     /**
@@ -30,10 +30,10 @@ public class SendSmsCase {
      * @throws IOException
      */
 
-    @Test
+    @Test(groups = {"电信号码测试"})
     public void sendSmsCase1() throws ParseException, NoSuchAlgorithmException, IOException {
         String result = SmsInterface.smsInterface(InterfaceNum.PROSEND,2);
-        SaveSendSmsResultList.saveSendSmsResultList(result);
+        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.PROSEND,2);
     }
 
     /**
@@ -43,10 +43,10 @@ public class SendSmsCase {
      * @throws IOException
      */
 
-    @Test
+    @Test(groups = {"联通号码测试"})
     public void sendSmsCase2() throws ParseException, NoSuchAlgorithmException, IOException {
         String result = SmsInterface.smsInterface(InterfaceNum.PROSEND,3);
-        SaveSendSmsResultList.saveSendSmsResultList(result);
+        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.PROSEND,3);
     }
 
 }

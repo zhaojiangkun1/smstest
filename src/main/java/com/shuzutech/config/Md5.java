@@ -1,4 +1,4 @@
-package com.shuzutech.model;
+package com.shuzutech.config;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;

@@ -9,9 +9,8 @@ import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 
 public class ResultListCase {
-    @Test
+    @Test(groups = {"发送结果测试"})
     public void resultListCase() throws ParseException, NoSuchAlgorithmException, IOException {
-        String result = SmsInterface.smsInterface(InterfaceNum.GETRESULTPRO,1);
-        System.out.println(result);
+        SmsInterface.smsInterface(InterfaceNum.GETRESULTPRO,1);
     }
 }

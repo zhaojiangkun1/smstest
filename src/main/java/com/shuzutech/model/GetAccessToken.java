@@ -5,7 +5,7 @@ import com.shuzutech.config.InterfaceNum;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class GetAccessToken {
         System.out.println("请求的appSecret:"+appSecret);
         url = ConfigFile.getTokenUrl(env) + "?&appId="+appId+"&appSecret="+appSecret;
         System.out.println("获取token的请求地址："+url);
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = HttpClientBuilder.create().build();
         HttpGet httpGet = new HttpGet(url);
         HttpResponse response = client.execute(httpGet);
         String result = EntityUtils.toString(response.getEntity(),"utf-8");
