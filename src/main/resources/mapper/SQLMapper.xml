@@ -23,6 +23,9 @@
     <select id="pageModel" parameterType="Integer" resultType="com.shuzutech.bean.PageModel">
         select * from pagemodel where id = #{id};
     </select>
+    <select id="getPlaceHolderContent" parameterType="Integer" resultType="com.shuzutech.bean.PlaceHolderContent">
+        select * from placeHolderContent where id = #{id};
+    </select>
 
 
 </mapper>

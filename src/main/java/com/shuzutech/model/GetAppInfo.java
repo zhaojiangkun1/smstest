@@ -14,7 +14,7 @@ public class GetAppInfo {
     public static AppInfo getAppInfo(InterfaceNum env) throws IOException {
         SqlSession session = DataBaseUtil.getSqlSession();
         AppInfo appInfo = new AppInfo();
-        if (env == InterfaceNum.TESTSEND || env == InterfaceNum.GETRESULTTEST || env == InterfaceNum.NEWTESTSEND) {
+        if (env == InterfaceNum.TESTSEND || env == InterfaceNum.GETRESULTTEST || env == InterfaceNum.NEWTESTSEND || env == InterfaceNum.TESTSMSSENDV2) {
             appInfo = session.selectOne("getAppInfo", 2);
         }else {
             appInfo = session.selectOne("getAppInfo",1);
@@ -27,7 +27,7 @@ public class GetAppInfo {
         AppInfo appInfo = new AppInfo();
         appInfo.setAccessToken(accessToken);
         appInfo.setUpdateTime(updateTime);
-        if (env == InterfaceNum.TESTSEND || env == InterfaceNum.GETRESULTTEST || env == InterfaceNum.NEWTESTSEND){
+        if (env == InterfaceNum.TESTSEND || env == InterfaceNum.GETRESULTTEST || env == InterfaceNum.NEWTESTSEND || env==InterfaceNum.TESTSMSSENDV2){
             appInfo.setId(2);
             session.update("updateAppInfo",appInfo);
             session.commit();

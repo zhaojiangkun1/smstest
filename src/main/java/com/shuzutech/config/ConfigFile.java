@@ -16,7 +16,7 @@ public class ConfigFile {
         String testUrl;
         String testUri=bundle.getString("testGetUrl");
         if(env == InterfaceNum.NEWTESTSEND || env == InterfaceNum.GETRESULTTEST
-            || env == InterfaceNum.TESTSEND){
+            || env == InterfaceNum.TESTSEND || env == InterfaceNum.TESTSMSSENDV2){
             testUrl = bundle.getString("testTokenUrl");
             url = testUrl + testUri;
         }else {
@@ -59,6 +59,16 @@ public class ConfigFile {
             testUrl = bundle.getString("testSendUrl");
             testUri = bundle.getString("newTestSendUri");
             url = testUrl + testUri;
+        }
+        if (env == InterfaceNum.TESTSMSSENDV2){
+            testUrl = bundle.getString("testSendUrl");
+            testUri = bundle.getString("testNewSendUri");
+            url = testUrl+testUri;
+        }
+        if (env == InterfaceNum.PROSMSSENDV2){
+            testUrl = bundle.getString("proUrl");
+            testUri = bundle.getString("proNewSendUri");
+            url = testUrl+testUri;
         }
         return url;
     }

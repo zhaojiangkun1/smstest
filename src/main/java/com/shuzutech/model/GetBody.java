@@ -19,6 +19,9 @@ public class GetBody {
         if (env == InterfaceNum.GETRESULTTEST || env == InterfaceNum.GETRESULTPRO){
             body = GetResultListParams.getResultListParams();
         }
+        if (env == InterfaceNum.PROSMSSENDV2 || env == InterfaceNum.TESTSMSSENDV2){
+            body = GetNewSendSmsParams.getNewSendSmsParams(id);
+        }
 
         return body;
     }

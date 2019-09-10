@@ -12,15 +12,16 @@ import java.text.ParseException;
 public class SendALlSmsCase {
 
     /**
-     * 移动号码测试
+     * 移动号码测试  该接口被废弃
      * @throws IOException
      * @throws ParseException
      * @throws NoSuchAlgorithmException
      */
     @Test(groups = {"移动号码测试"})
-    public void sendAllSmsCase() throws IOException, ParseException, NoSuchAlgorithmException {
-        String result = SmsInterface.smsInterface(InterfaceNum.NEWPROSEND,2);
-        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.NEWPROSEND,2);
+    public void sendAllSmsCase() throws IOException, ParseException, NoSuchAlgorithmException,NullPointerException {
+        String result = SmsInterface.smsInterface(InterfaceNum.NEWTESTSEND,2);
+        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.NEWTESTSEND,2);
+
     }
 
     /**
@@ -32,8 +33,8 @@ public class SendALlSmsCase {
 
     @Test(groups = {"联通号码测试"})
     public void sendAllSmsCase1() throws ParseException, NoSuchAlgorithmException, IOException {
-        String result = SmsInterface.smsInterface(InterfaceNum.NEWPROSEND,7);
-        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.NEWPROSEND,7);
+        String result = SmsInterface.smsInterface(InterfaceNum.NEWTESTSEND,7);
+        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.NEWTESTSEND,7);
     }
 
     /**
@@ -44,8 +45,8 @@ public class SendALlSmsCase {
      */
     @Test(groups = {"电信号码测试"})
     public void sendAllSmsCase2() throws ParseException, NoSuchAlgorithmException, IOException {
-        String result = SmsInterface.smsInterface(InterfaceNum.NEWPROSEND,6);
-        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.NEWPROSEND,6);
+        String result = SmsInterface.smsInterface(InterfaceNum.NEWTESTSEND,6);
+        SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.NEWTESTSEND,6);
     }
 
 }
