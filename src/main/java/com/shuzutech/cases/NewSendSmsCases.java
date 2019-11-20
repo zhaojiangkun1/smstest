@@ -20,7 +20,7 @@ public class NewSendSmsCases {
 
     @Test
     public void newSendSmsCase() throws ParseException, NoSuchAlgorithmException, IOException {
-        String result = SmsInterface.smsInterface(InterfaceNum.TESTSMSSENDV2,5);
+        String result = SmsInterface.smsInterface(InterfaceNum.PROSMSSENDV2,5);
         SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.PROSEND,5);
     }
 
@@ -33,7 +33,7 @@ public class NewSendSmsCases {
 
     @Test
     public void newSendSmsCase1() throws ParseException, NoSuchAlgorithmException, IOException {
-        String result = SmsInterface.smsInterface(InterfaceNum.TESTSMSSENDV2,6);
+        String result = SmsInterface.smsInterface(InterfaceNum.PROSMSSENDV2,6);
         SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.PROSEND,6);
     }
 
@@ -45,7 +45,20 @@ public class NewSendSmsCases {
      */
     @Test
     public void newSendSmsCase2() throws ParseException, NoSuchAlgorithmException, IOException {
-        String result = SmsInterface.smsInterface(InterfaceNum.TESTSMSSENDV2,7);
+        String result = SmsInterface.smsInterface(InterfaceNum.PROSMSSENDV2,7);
         SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.PROSEND,7);
+    }
+
+    /**
+     * 手机号码格式错误
+     * @throws ParseException
+     * @throws NoSuchAlgorithmException
+     * @throws IOException
+     */
+
+    @Test
+    public void newSendSmsCase3() throws ParseException, NoSuchAlgorithmException, IOException {
+        String result = SmsInterface.smsInterface(InterfaceNum.PROSMSSENDV2,8);
+        System.out.println(result);
     }
 }

@@ -49,4 +49,17 @@ public class SendALlSmsCase {
         SaveSendSmsResultList.saveSendSmsResultList(result,InterfaceNum.NEWTESTSEND,6);
     }
 
+    /**
+     * 手机号码格式错误
+     * @throws ParseException
+     * @throws NoSuchAlgorithmException
+     * @throws IOException
+     */
+
+    @Test
+    public void sendAllSmsCase3() throws ParseException, NoSuchAlgorithmException, IOException {
+        String result = SmsInterface.smsInterface(InterfaceNum.NEWTESTSEND,8);
+        System.out.println(result);
+    }
+
 }
